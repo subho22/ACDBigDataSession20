@@ -1,0 +1,19 @@
+Creating cutomer table
+
+use test;
+create table customer(id int,name varchar(20),loc varchar(20),age int);
+
+insert into customer values(1,'Amit','IND',22);
+insert into customer values(2,'Sumit','PAK',20);
+
+Sqoop statement:-
+
+sqoop export --connect jdbc:mysql://localhost/test --username 'root' -P --table customer --update-key id  --export-dir /user/acadgild/customers.dat -m 1
+
+mysql> select * from customer;
++------+-------+------+------+
+| id   | name  | loc  | age  |
++------+-------+------+------+
+|    1 | Amit  | IND  |   18 |
+|    2 | Sumit | PAK  |   20 |
++------+-------+------+------

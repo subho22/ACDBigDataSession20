@@ -1,0 +1,3 @@
+
+sqoop import --connect jdbc:mysql://localhost/test --username 'root' -P --table customer  --target-dir /user/acadgild/sqoop -m 1 --hive-import --create-hive-table --hive-table sqoop_workspace.customer
+
